@@ -10,7 +10,7 @@ from test_client import make_cold_client
 
 from cronometer_api_mcp.client import CronometerError
 
-ADDED = {"heightInCM": 173, "weightInKG": 75.4, "messages": [], "id": 1894305060}
+ADDED = {"heightInCM": 180, "weightInKG": 80.0, "messages": [], "id": 1894305060}
 
 
 def test_add_biometric_sends_new_reading(tmp_path):
