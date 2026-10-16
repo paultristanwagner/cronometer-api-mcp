@@ -580,7 +580,7 @@ def lookup_barcode(barcode: str) -> str:
     Cronometer doesn't know the code (search_foods by name instead).
 
     Args:
-        barcode: The digits under the bars, e.g. "5901939002019". Spaces and
+        barcode: The digits under the bars, e.g. "4006381333931". Spaces and
             dashes are fine; the check digit is verified.
     """
     try:

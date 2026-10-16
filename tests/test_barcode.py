@@ -79,11 +79,11 @@ def _food(food_id: int, barcodes: list[str]) -> dict:
 
 
 def test_lookup_barcode_sends_normalized_code(tmp_path):
-    hit = _food(1, ["5901939002019"])
+    hit = _food(1, ["4006381333931"])
     client, state = make_cold_client(tmp_path, [{"foodId": 1, "foods": [hit]}])
 
-    assert client.lookup_barcode("590 1939 00201 9") == [hit]
-    assert state["payloads"][0]["query"] == "5901939002019"
+    assert client.lookup_barcode("400 6381 33393 1") == [hit]
+    assert state["payloads"][0]["query"] == "4006381333931"
     assert state["payloads"][0]["config"] == {"call_version": 2}
 
 
