@@ -57,7 +57,7 @@ EXERCISE = {
     "activityId": 1342,
     "activitySpecId": 0,
     "minutes": 30,
-    "weight": 166.2,
+    "weight": 176.4,
     "calories": -123,
     "calorieOverride": True,
     "meta": {},
