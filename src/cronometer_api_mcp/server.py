@@ -775,9 +775,9 @@ def delete_recipe(food_id: int, permanent: bool = False) -> str:
     been logged: it disappears from search and from the recipe and meal
     lists, and diary entries that already use it are kept.
 
-    permanent=True deletes it outright. This ALSO REMOVES EVERY DIARY ENTRY
-    that logged it, on every day. Use it only for a recipe that was never
-    logged, or when the user has explicitly asked for those entries to go.
+    permanent=True deletes it outright. This ALSO REMOVES THE DIARY ENTRIES
+    that logged it. Use it only for a recipe that was never logged, or when
+    the user has explicitly asked for those entries to go.
 
     Plain custom foods are not accepted; use delete_custom_food for those.
 
