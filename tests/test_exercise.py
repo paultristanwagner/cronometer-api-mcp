@@ -16,7 +16,7 @@ FOREST = {
     "groupsMap": {},
 }
 LEGACY = {"activities": [{"id": 12, "name": "Walking 3.0 mph", "cals": 1.5}]}
-PROFILE = {"prefs": [{"tz": 120}, {"weightInKG": 75.4}]}
+PROFILE = {"prefs": [{"tz": 0}, {"weightInKG": 80.0}]}
 ADDED = {"messages": [], "id": 881403934}
 
 
@@ -41,7 +41,7 @@ def test_add_exercise_sends_override_calories_and_profile_weight(tmp_path):
     assert ex["minutes"] == 15
     assert ex["calories"] == -40
     assert ex["calorieOverride"] is True
-    assert ex["weight"] == 166.2  # 75.4 kg in lb
+    assert ex["weight"] == 176.4  # 80 kg in lb
     assert ex["day"] == "1900-1-2"
     assert ex["order"] == (2 << 16) | 1
     assert ex["exerciseId"] is None
@@ -55,7 +55,7 @@ def test_add_exercise_sends_override_calories_and_profile_weight(tmp_path):
 
 
 def test_add_exercise_needs_a_profile_weight(tmp_path):
-    client, state = make_cold_client(tmp_path, [{"prefs": [{"tz": 120}]}, ADDED])
+    client, state = make_cold_client(tmp_path, [{"prefs": [{"tz": 0}]}, ADDED])
 
     with pytest.raises(CronometerError, match="no weight"):
         client.add_exercise(1342, 15, 40, diary_group=1)
